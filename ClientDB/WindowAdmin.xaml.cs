@@ -15,13 +15,28 @@ using System.Windows.Shapes;
 namespace ClientDB
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для WindowAdmin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WindowAdmin : Window
     {
-        public MainWindow()
+        public WindowAdmin()
         {
             InitializeComponent();
+        }
+
+        private void ShowDetails(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExitAccount(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExitApp(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
