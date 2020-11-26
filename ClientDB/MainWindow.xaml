@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:ClientDB"
         mc:Ignorable="d"
         Title="Commercical Firm" Height="450" Width="800">
+    <Window.DataContext>
+        <local:ViewModelMain/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -14,11 +17,21 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Content="Товары" Width="100" HorizontalAlignment="Center" />
-            <Button Content="Услуги" Width="100" HorizontalAlignment="Center" />
-            <Button Content="Список клиентов" Width="135" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="0" Grid.Column="0" >
+            <Menu>
+                <MenuItem Header="Управление">
+                    <MenuItem Header="Список клиентов" Command="{Binding OpenListClient}"/>
+                    <MenuItem Header="Добавить клиентов" Command="{Binding OpenAddClient}"/>
+                    <MenuItem Header="Список товаров" Command="{Binding OpenListProduct}"/>
+                    <MenuItem Header="Добавить товар" Command="{Binding OpenAddProduct}"/>
+                    <MenuItem Header="Список услуг"/>
+                    <MenuItem Header="Добавить услугу"/>
+                    <MenuItem Header="Настройки" Command="{Binding OpenSettings}"/>
+                    <MenuItem Header="Выйти из аккаунта" Click="ExitAccBtn"/>
+                    <MenuItem Header="Выход" Click="ExitBtn"/>
+                </MenuItem>
+            </Menu>
         </StackPanel>
-        <Frame Grid.Row="1" Grid.Column="0" Name="MainFrame"/>
+        <Frame Grid.Row="1" Grid.Column="0" Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

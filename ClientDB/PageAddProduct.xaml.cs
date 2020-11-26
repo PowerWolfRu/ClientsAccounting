@@ -10,28 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ClientDB
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для PageAddProductxaml.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageAddProduct : Page
     {
-        public MainWindow()
+        public PageAddProduct(ViewModelProductEditor editor)
         {
             InitializeComponent();
-        }
-       
-        private void ExitAccBtn(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ExitBtn(object sender, RoutedEventArgs e)
-        {
-
+            DataContext = editor;
         }
     }
 }

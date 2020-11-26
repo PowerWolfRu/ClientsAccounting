@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ClientDB"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="400"
-      Title="RegisterPage">
+      Title="Регистрация">
     <Page.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">

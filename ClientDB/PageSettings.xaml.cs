@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using MySqlX.XDevAPI.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,28 +12,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ClientDB
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для PageSettings.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageSettings : Page
     {
-        public MainWindow()
+        
+        public PageSettings(ViewModelSettings settings)
         {
             InitializeComponent();
-        }
-       
-        private void ExitAccBtn(object sender, RoutedEventArgs e)
-        {
-
+            DataContext = settings;
         }
 
-        private void ExitBtn(object sender, RoutedEventArgs e)
+        private void ResultClick(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

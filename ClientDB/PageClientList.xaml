@@ -1,0 +1,33 @@
+﻿<Page x:Class="ClientDB.PageClientList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClientDB"
+      mc:Ignorable="d" 
+      d:DesignHeight="401" d:DesignWidth="792"
+      Title="Список клиентов">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <ListView x:Name="clientList" Height="350" ItemsSource="{Binding Clients}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding SurName}"/>
+                        <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="Покупка" DisplayMemberBinding="{Binding ProductName}"/>
+                        <GridViewColumn Header="Цена"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Button Content="Изменить информацию" Click="EditClientBtn"/>
+        </StackPanel>
+    </Grid>
+</Page>
